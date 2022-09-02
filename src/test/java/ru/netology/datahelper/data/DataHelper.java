@@ -15,7 +15,8 @@ public class DataHelper {
     }
 
     public static AuthInfo getAuthInfo() {
-        return new AuthInfo("vasya", "qwerty123",);
+
+        return new AuthInfo("vasya", "qwerty123");
     }
 
     @Value
@@ -23,8 +24,21 @@ public class DataHelper {
         private String code;
     }
 
-    public static VerificationCode getVerificationCode(AuthInfo authInfo) {
+    public static VerificationCode getVerificationCodeFor(AuthInfo authInfo) {
 
         return new VerificationCode("12345");
+    }
+
+    @Value
+    public static class CardInfo {
+        private String number;
+
+        public static CardInfo getCardOne() {
+            return new CardInfo("5559 0000 0000 0001");
+        }
+
+        public static CardInfo getCardTwo() {
+            return new CardInfo("5559 0000 0000 0002");
+        }
     }
 }
