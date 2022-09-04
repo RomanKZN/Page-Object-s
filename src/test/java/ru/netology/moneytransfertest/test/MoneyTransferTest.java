@@ -1,6 +1,7 @@
 package ru.netology.moneytransfertest.test;
 
 import com.codeborne.selenide.Configuration;
+import lombok.var;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -34,7 +35,7 @@ public class MoneyTransferTest {
     @Test
     void shouldTransferMoneyFromFirstToSecond() {
         var dashboardPage = new DashboardPage();
-        int expected = dashboardPage.getCardBalance("2") + 1000;
+        int expected = dashboardPage.getCardBalance("2")+1000;
         dashboardPage.depositToSecond();
         var transferPage = new MoneyTransfer();
         transferPage.moneyTransfer(DataHelper.CardInfo.getCardOne(), "1000");
@@ -43,4 +44,23 @@ public class MoneyTransferTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
+    @Test
+    void shouldGetErrorMessageIfAmountMoreBalance (){
+        var LoginPage1 = open("http://localhost:9999",ru.netology.dashboardpage.page.LoginPage1.class);
+        var authInfo = DataHelper.getAuthInfo();
+    }
+//    @Test
+//    void mustNotTransferAnAmountGreaterThanTheBalance() {
+//        var dashboardPage = new DashboardPage();
+//        int expected = dashboardPage.getCardBalance("2")+1000;
+//        dashboardPage.depositToSecond();
+//        var transferPage = new MoneyTransfer();
+//        transferPage.moneyTransfer(DataHelper.CardInfo.getCardOne(), "50000");
+//        int actual = dashboardPage.getCardBalance("2");
+//
+//        Assertions.assertEquals(expected, actual);
+//
+//    }
+
 }
