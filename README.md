@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/armbkagckt4a869b?svg=true)](https://ci.appveyor.com/project/RomanKZN/page-object-s)
