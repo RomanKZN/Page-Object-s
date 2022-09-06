@@ -1,18 +1,18 @@
-package ru.netology.moneytransfertest.test;
+package ru.netology.test;
 
 import org.junit.jupiter.api.Test;
-import ru.netology.datahelper.data.DataHelper;
+import ru.netology.data.DataHelper;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static ru.netology.datahelper.data.DataHelper.*;
+import static ru.netology.data.DataHelper.*;
 
 public class MoneyTransferTest {
 
 
     @Test
     void shouldTransferFromFirstToSecond(){
-        var LoginPage1 = open("http://localhost:9999",ru.netology.dashboardpage.page.LoginPage1.class);
+        var LoginPage1 = open("http://localhost:9999",ru.netology.page.LoginPage1.class);
         var authInfo = DataHelper.getAuthInfo();
         var verificationPage = LoginPage1.validLogin(authInfo);
         var verificationCode = DataHelper.getVerificationCode();
@@ -34,7 +34,7 @@ public class MoneyTransferTest {
 
     @Test
     void shouldGetErrorMessageIfAmountMoreBalance(){
-        var LoginPage1 = open("http://localhost:9999",ru.netology.dashboardpage.page.LoginPage1.class);
+        var LoginPage1 = open("http://localhost:9999",ru.netology.page.LoginPage1.class);
         var authInfo = DataHelper.getAuthInfo();
         var verificationPage = LoginPage1.validLogin(authInfo);
         var verificationCode = DataHelper.getVerificationCode();

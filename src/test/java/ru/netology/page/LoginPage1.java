@@ -1,8 +1,9 @@
-package ru.netology.dashboardpage.page;
+package ru.netology.page;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
-import ru.netology.datahelper.data.DataHelper;
+import ru.netology.page.VerificationPage;
+import ru.netology.data.DataHelper;
 import static com.codeborne.selenide.Selenide.page;
 
 public class LoginPage1 {
